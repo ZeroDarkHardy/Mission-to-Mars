@@ -21,5 +21,8 @@ We created a file with Jupyter Notebook, ["Mission_to_Mars_Challenge.ipynb"](htt
 
 ## Deliverable 2 (Update the Web App with Mars' Hemisphere Images and Titles):
 
+We created [scraping.py](https://github.com/ZeroDarkHardy/Mission-to-Mars/blob/main/scraping.py) to be the workhorse of our scraping site.  Within the file, we created the function "scrape_all()" to return the data we want, but referencing several other functions (mars_news, featured_image, mars_facts) within it.  
 
+![deliverable_2b.png](https://github.com/ZeroDarkHardy/Mission-to-Mars/blob/main/resources/deliverable_2b.png)
+Once built, this deliverable asked that we introduce a new function (which I named mars_hemispheres) to scrape and return the titles full-resolution image URLs of Mars' hemispheres, so that they can be added to our MongoDB and finally referenced in our web template.
 
