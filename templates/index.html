@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mission to Mars</title>
+    <!--Deliverable 3, introduced newer version of bootstrap so I can work with element colors-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    /> 
+  </head>
+  <body>
+    <!-- Deliverable 3, added background image to whole page to make it more interesting-->
+    <style>
+      body {
+        background-image: url(https://wallup.net/wp-content/uploads/2016/01/213892-low_poly-Mars-planet-space.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+    <div class="container">
+      <!-- Add Jumbotron to Header -->
+      <!-- Deliverable 3: Added background image to Jumbotron, changed button color and button text color-->
+      <div class="jumbotron text-center" style="background-image: url(https://image.freepik.com/free-vector/mars-landscape-alien-planet-martian-background_107791-1781.jpg); background-size: 100%">
+        <h1 class="font-weight-light" style="color:white">Mission to Mars</h1>
+        <!-- Add a button to activate scraping script -->
+        <p><a class="btn btn-primary btn-lg btn-danger" href="/scrape" role="button">Scrape New Data</a></p>
+      </div>
+      <!-- Added a "last updated" readout to display how recently data was scraped -->
+      <div class="text-center" style="color:white">
+        <p>Last Updated: {{ mars.last_modified }}</p>
+      </div>
+
+      <!-- Add section for Mars News -->
+      <div class="row" id="mars-news">
+        <div class="col-md-12">
+          <div class="media">
+            <div class="media-body">
+              <h2>Latest Mars News</h2>
+              <h4 class="media-heading">{{ mars.news_title }}</h4>
+              <p class="text-white">{{ mars.news_paragraph }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section for Featured Image and Facts table -->
+      <div class="row" id="mars-featured-image">
+        <div class="col-md-8">
+          <h2 class="text-center">Featured Mars Image</h2>
+
+          <!-- if images is False/None/non-existent, then default to error message -->
+          <img
+            src="{{mars.featured_image | default('static/images/error.png', true) }}"
+            class="img-responsive"
+            alt="Responsive image"
+          />
+        </div>
+
+        <div class="col-md-4">
+          <!-- Mars Facts -->
+          <div class="row" id="mars-facts">
+            <h4 class="text-center">Mars Facts</h4>
+            {{ mars.facts | safe }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Section for Mars Hemispheres -->
+      <!-- Deliverable 3: added grid scaling for tablets, phones, and large desktops-->
+      <!-- Added transparent backgrounds to thumbnails to let the background image display-->
+      <div class="row" id="mars-hemispheres">
+        <div class="page-header">
+          <h2 class="text-center">Mars Hemispheres</h2>
+        </div>
+        {% for hemisphere in mars.hemispheres %}
+        <div class="col-xs-12 col-md-6 col-sm-4 col-lg-6">
+          <div class="thumbnail" style='background-color: transparent'>
+            <img src="{{hemisphere.img_url | default('static/images/error.png, true') }}" alt="...">
+            <div class="caption">
+              <h3 class="text-center">{{hemisphere.title}}</h3>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
