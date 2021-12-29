@@ -13,7 +13,7 @@ We wanted our webpage to include:
 - Current, high-resolution images of the various hemispheres of Mars scraped from [marshemispheres.com](http://marshemispheres.com)
 - An interactive button that initiates a new scrape of all the sites, and a date/time readout showing when the data was last updated.
 
-## Delieverable 1 (Scrape Full-Resolution Mars Hemisphere Images and Titles):
+## Deliverable 1 (Scrape Full-Resolution Mars Hemisphere Images and Titles):
 
 We created a file with Jupyter Notebook, ["Mission_to_Mars_Challenge.ipynb"](https://github.com/ZeroDarkHardy/Mission-to-Mars/blob/main/Mission_to_Mars_Challenge.ipynb), to scrape the various sites and verify our data, to help build our Flask app.  Having already built code to scrape the earlier elements, this deliverable asked us to refactor that code to scrape the full-res image URLs and image titles from [marshemispheres.com](http://marshemispheres.com).
 
