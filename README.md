@@ -36,7 +36,7 @@ Our final task was to take the constructed local web page and add styling elemen
 - Images were added as backgrounds for both the jumbotron element and the screen as a whole.
 - Added transparent backgrounds to the hemisphere thumbnail section, so the background image isn't completely covered.
 - A "Last Updated" readout display was added just below the jumbotron, to inform the user how recent the saved data is.
-- Added the code <div class="col-xs-12 col-md-6 col-sm-4 col-lg-6"> to the hemisphere thumbnail section, in order to resize the thumbnail grid for phones, tablets, medium and large desktops.  In the screenshot below, you'll see the page is mobile responsive, and resizes the  various elements so they can be stacked above each other.
+- Added the code ```<div class="col-xs-12 col-md-6 col-sm-4 col-lg-6">``` to the hemisphere thumbnail section, in order to resize the thumbnail grid for phones, tablets, medium and large desktops.  In the screenshot below, you'll see the page is mobile responsive, and resizes the  various elements so they can be stacked above each other.
 ![deliverable_3a.png](https://github.com/ZeroDarkHardy/Mission-to-Mars/blob/main/resources/deliverable_3a.png)
 
 ## Summary
